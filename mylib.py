@@ -1,3 +1,6 @@
+import random
+from math import *
+
 def greater(num1 : int, num2 : int):
     if num1 > num2:
         return num1 
@@ -105,4 +108,14 @@ def unicoder(string):
         else:
             new_str += string[i]
     return new_str
+
+def get_random_item(lis : list):
+    return lis[random.randint(0,len(lis)-1)]
+
+def is_check_import_status(package : str):
+    try:
+        exec("import {}".format(package))
+        print("done")
+    except:
+        print("Something Went wrong")
 
