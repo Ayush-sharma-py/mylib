@@ -122,29 +122,39 @@ def is_check_import_status(package : str):
 def is_valid_password(string, require_uppercase= False, require_lowercase = False,maximum = len(str), minimum  = 0, have_number = False, not_have = []):
     delta = True
     number = [0,1,2,3,4,5,6,7,8,9]
+    
     if require_uppercase:
         if string.lower == string:
             delta =  False
+
     if require_lowercase:
         if string.upper == string:
             delta = False 
+
     if len(string) > maximum:
         delta = False
+
     if len(string) < minimum:
         delta = False
+
     if have_number:
         have = False
+
         for i in string:
             if int(i) in number:
                 have = True
         if have == False:
             delta = False
+            
     nothave = True
+
     if i in string:
         if i in not_have:
             nothave = False
+
     if nothave == False:
         delta = False
+        
     return delta
     
 
